@@ -10,6 +10,6 @@ export const RedisCacheModule = RedisModule.forRootAsync({
     port: configService.get<string>('REDIS_PORT'),
     options: { maxRetriesPerRequest: null },
     reconnectOnError: true,
-    connectTimeout: 60 * 60 * 60 * 2
-  })
+    connectTimeout: 60 * 60 * 60,
+  }),
 });

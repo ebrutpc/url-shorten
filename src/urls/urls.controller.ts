@@ -5,7 +5,6 @@ import {
   Param,
   Post,
   UseInterceptors,
-  NotFoundException,
 } from '@nestjs/common';
 import { UrlsService } from './urls.service';
 import UrlDto from './dtos/generateShortUrl.dto';
@@ -22,11 +21,7 @@ export class UrlsController {
   @Get('/:shortUrl')
   async redirectUrl(@Param() shortURlDto: ShortURlDto, @Res() res: Response) {
     const url = await this.urlsService.getUrlByShortUrl(shortURlDto.shortUrl);
-    if (url) {
-      res.redirect(url);
-    } else {
-      throw new NotFoundException('Short URL not found');
-    }
+    res.redirect(url);
   }
 
   @Post('')
