@@ -2,7 +2,7 @@
 
 URL Shortener is a simple application that allows users to shorten long URLs into more manageable links. This project is built using Nest.js and Redis, providing a lightweight solution for URL shortening.
 
-## API ENDPOINTS
+## API endpoints
 
 | Method   |      Url       |     Headers |                           Description |
 | :------- | :------------: | ----------: | ------------------------------------: |
@@ -18,7 +18,7 @@ $ cd url-shorten
 $ npm install
 ```
 
-## CREATE A .ENV FILE
+## Create a .env file
 
 ```bash
 # .env.sample
