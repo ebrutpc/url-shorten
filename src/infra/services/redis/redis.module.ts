@@ -1,6 +1,6 @@
 import { Global, Module } from '@nestjs/common';
 import { RedisService } from './redis.service';
-import { RedisCacheModule } from '../../database/redis.database';
+import { RedisCacheModule } from './redis.connection';
 
 @Global()
 @Module({
