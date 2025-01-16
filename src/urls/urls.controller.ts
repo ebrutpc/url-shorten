@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Get,
+  HttpStatus,
   Param,
   Post,
   UseInterceptors,
@@ -21,7 +22,7 @@ export class UrlsController {
   @Get('/:shortUrl')
   async redirectUrl(@Param() shortURlDto: ShortURlDto, @Res() res: Response) {
     const url = await this.urlsService.getUrlByShortUrl(shortURlDto.shortUrl);
-    res.redirect(url);
+    res.redirect(HttpStatus.MOVED_PERMANENTLY, url);
   }
 
   @Post('')

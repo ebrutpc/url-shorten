@@ -10,7 +10,7 @@ import { createHash } from 'crypto';
 export class UrlsService {
   constructor(private readonly redisService: RedisService) {}
 
-  private createHashAndEncoding(url: string) {
+  createHashAndEncoding(url: string) {
     const hash = createHash('md5').update(url).digest('base64');
     return hash.substring(1, 7);
   }
